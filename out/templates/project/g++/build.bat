@@ -10,5 +10,5 @@ set EXECUTABLE=main
 if not exist %BIN% mkdir %BIN%
 
 echo Compiling the C++ program...
-%CXX% %CXX_FLAGS% -I%INCLUDE% %LIB% %SRC%\*.cpp -o %BIN%\%EXECUTABLE% %LIB%
+%CXX% %CXX_FLAGS% -I%INCLUDE% %SRC%\*.cpp -o %BIN%\%EXECUTABLE% %LIB%
 echo Done.
