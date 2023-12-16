@@ -4,7 +4,7 @@
         {
             "name": "C++ Debug (Windows)",
             "type": "cppvsdbg",
-            "request": "launch",
+            "request": "cppdbg",
             "program": "${workspaceFolder}\\bin\\main.exe",
             "args": [],
             "stopAtEntry": false,
