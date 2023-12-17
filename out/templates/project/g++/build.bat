@@ -34,9 +34,9 @@ if %errorlevel% neq 0 (
 @REM Copy required DLLs
 for /f "tokens=3 delims= " %%i in ('objdump -p %BIN%\%EXECUTABLE%.exe ^| findstr "DLL Name"') do (
     if "%%~xi"==".dll" (
-        xcopy /y %MINGW_DLL_PATH%\%%i %BIN%\ >NUL
+        xcopy /y %MINGW_DLL_PATH%\%%i %BIN%\
         if errorlevel 1 (
-            xcopy /y %SYSTEM_DLL_PATH%\%%i %BIN%\ >NUL
+            xcopy /y %SYSTEM_DLL_PATH%\%%i %BIN%\
             if errorlevel 1 (
                 echo Copying %%i failed.
             )
