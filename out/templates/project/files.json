@@ -8,7 +8,7 @@
         "src"
     ],
     "templates": {
-        "[G++] Linux": {
+        "[G++] Windows": {
             "files": {
                 "g++/tasks.json": ".vscode/tasks.json",
                 "g++/launch.json": ".vscode/launch.json",
