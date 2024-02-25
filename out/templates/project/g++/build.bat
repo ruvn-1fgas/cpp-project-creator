@@ -25,21 +25,28 @@ echo Done.
 
 @REM Identify required DLLs
 echo Identifying required DLLs...
-objdump -p %BIN%\%EXECUTABLE%.exe | findstr "DLL Name"
+for /f "tokens=3 delims= " %%i in ('objdump -p %BIN%\%EXECUTABLE%.exe ^| find /i "DLL Name"') do (
+    if not "%%i" == "Table:" (
+        echo %%i
+    )
+)
 if %errorlevel% neq 0 (
     echo Identifying DLLs failed.
     exit /b %errorlevel%
 )
+echo Done.
 
 @REM Copy required DLLs
+echo Copying required DLLs...
 for /f "tokens=3 delims= " %%i in ('objdump -p %BIN%\%EXECUTABLE%.exe ^| findstr "DLL Name"') do (
     if "%%~xi"==".dll" (
-        xcopy /y %MINGW_DLL_PATH%\%%i %BIN%\
+        xcopy /y %MINGW_DLL_PATH%\%%i %BIN%\ 2>nul > nul
         if errorlevel 1 (
-            xcopy /y %SYSTEM_DLL_PATH%\%%i %BIN%\
+            xcopy /y %SYSTEM_DLL_PATH%\%%i %BIN%\ 2>nul > nul
             if errorlevel 1 (
                 echo Copying %%i failed.
             )
         )
     )
 )
+echo Done.
