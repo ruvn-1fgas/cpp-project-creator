@@ -1,4 +1,5 @@
 # CPP Project Creator
+
   CPP Project Creator is a Visual Studio Code extension that allows you to easily create C++ projects with a build file and correct project structure. It simplifies the process of setting up a new C++ project by automating the creation of the necessary files and directories.
 
 ## Building and Installation
@@ -6,7 +7,7 @@
 1. Clone the repository: `git clone https://github.com/ruvn-1fgas/cpp_project_creator.git`
 2. Install dependencies: `npm install`
 3. Run the build package task: `vsce package`
-4. Install the extension: `code --install-extension cpp-project-creator-0.9.6.vsix` or use Ctrl+Shift+P and select `Extensions: Install from VSIX...`
+4. Install the extension: `code --install-extension cpp-project-creator-0.9.8.vsix` or use Ctrl+Shift+P and select `Extensions: Install from VSIX...`
 
 ## Usage
 
